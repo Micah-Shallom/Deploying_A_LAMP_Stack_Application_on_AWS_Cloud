@@ -10,3 +10,15 @@ A LAMP Stack is a solution stack that is being used in deploying web application
 
 **PHP,PERL or PYTHON**: this represents programming languages which effectively combines all the elements of the LAMP stack and is used to make web applications execute.
 
+First we log on to AWS Cloud Services and create an EC2 instance:
+
+![EC2 Creation](DEPLOYING-A-LAMP-STACK-WEBSITE-APPLICATION-ON-AWS-CLOUD\img\1.ec2_creation.png)
+
+
+To deploying the web application, we need to install apache via ubuntu package manager `apt`:
+```
+#Updating Packages
+sudo apt update
+
+sudo apt install apache2
+```
