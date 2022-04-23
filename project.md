@@ -23,7 +23,7 @@ Successful login into ec2 instance:
 ![Successful login into instance](./img/2.logged_into_ec2_instance.png)
 ## Setting Up Apache Web Server
 
-To deploying the web application, we need to install apache via ubuntu package manager `apt`:
+To deploying the web application, we need toinstall apache via ubuntu package manager `apt`:
 ```
 #Updating Packages
 $ sudo apt update
@@ -46,3 +46,24 @@ $ systemctl status apache2
 
 If it shows a green text that means the web server has been successfully spunned and is live.
 
+## Configuring Security Group Inbound Rules on EC2 Instance
+A Security group is a group of rules that acts as a virtual firewall to the type of traffic that enters(inbound traffic) or leaves(outbound traffic) an instance.
+
+When the instance is created, we have a default TCP rule on port 22 opened which is useful for SSH connection to a terminal.
+In order to ensure that our webpage are being acccessed on the internet, we need to open a TCP port 80 inbound rule.
+
+![Security group rule ](./img/4.configuring_securitygroup_rules.png)
+
+TO check the accessiblity of our web server on the internet, we curl the ip address/DNS name of our localhost.
+```
+curl http://127.0.0.1:80  or curl http://localhost:80
+```
+
+![web server on terminal](./img/5.checking_inbound_rule_implementation.png)
+
+To see if our web application server can respond to requests , use the public ip address of our instance on a web browser.
+`http://<Public-IP-Address>:80` 
+![](./img/5.a.checking_rules_config2.png)
+
+## Installing MySQL
+We use MySQL as a relational database to store and manage data for our time 
